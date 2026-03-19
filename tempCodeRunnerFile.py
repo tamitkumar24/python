@@ -1,16 +1,15 @@
-class Father:
-#     def skills(self):
-#         return ["coding"]
+class SecretConnection:
+    def __enter__(self):
+        print("Opening secure connection...")
+        return self
 
-# class Mother:
-#     def skills(self):
-#         return ["cooking"]
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Closing secure connection securely.")
 
-# class Child(Father, Mother):
-#     def show(self):
-#         skills = Father.skills(self) + Mother.skills(self)
-#         print("Child skills:", ", ".join(skills))
-
-
-# obj = Child()
-# obj.show()
+with SecretConnection() as conn:
+    print("Transmitting data...")
+    
+# Output:
+# Opening secure connection...
+# Transmitting data...
+# Closing secure connection securely.
