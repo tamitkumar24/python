@@ -148,7 +148,71 @@ print(evenAndodd(12))
 
 """ Map , Filter  and Zip """
 
+#Map:use map() when you want to transform every item in a list
+
 #example : double list element
 a=[1,2,3,4,5]
 result= map(lambda x : x*2,a)
 print(list(result))
+
+#is it compulsory to apply lambda funtion : NO you can also solve anothe simple function but as recommendated we prefer lambda in map zip
+
+
+a=[1,2,3,4,5]
+
+def double(x):
+    return x*2
+
+result=map(double,a)
+print(list(result))
+
+
+#filter:used to filter out the stuff.it work on true or false techniques
+
+
+def even(x):
+    if x%2==0:
+        return True
+    else:
+        return False
+    
+a=[1,2,3,4,5,6,7,8,9,66,55,44,33,22]
+result = filter(even, a)
+
+#  print(result)#given an object value
+print(list(result))
+
+#by using lambda
+
+a=[1,2,3,4,5,6,7,8,9,66,55,44,33,22]
+result=filter(lambda x :True if x%2 == 0 else False,a)
+print(list(result))
+   
+""" Modules maths.py) and packages """
+
+#module is just a single file containing code and we can use this file code in other file
+import maths # we can also used this as from maths import additions then  we dose not write maths.addition
+
+print(maths.additions(12,34))
+
+#packages is a folder that contains one or more modules(python files).It may also contain sub-packages
+#there are third party packages as well like numpy, pandas, malplotlib
+from package.hello import hello
+hello()
+from package  import maths1
+print(maths1.remainder(12,43))
+
+
+#agar ek folder ke ander se ek aur folder me jana hai import krne ke liye then you used modelss.model(thats means use . symbol for this)
+
+
+
+
+
+
+
+
+
+
+
+
